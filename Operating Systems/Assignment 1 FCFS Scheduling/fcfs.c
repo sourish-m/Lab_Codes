@@ -1,3 +1,4 @@
+//Program to do FCFS scheduling, doesn't work properly for all data
 #include <stdio.h>
 #include <stdlib.h>
 
