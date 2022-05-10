@@ -1,0 +1,7 @@
+*.exe
+# Ignores executable files
+
+*.docx
+*.pdf
+# Ignore document files
+
