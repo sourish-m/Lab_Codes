@@ -5,3 +5,6 @@
 *.pdf
 # Ignore document files
 
+.tmp.driveupload/
+# Ignore Google Drive folder
+
