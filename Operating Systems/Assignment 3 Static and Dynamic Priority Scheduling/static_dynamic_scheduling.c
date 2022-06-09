@@ -18,7 +18,7 @@ void input()
 	do
 	{
 		printf("\n Enter number of processes: ");
-		scanf("%d", &n);
+		scanf_s("%d", &n);
 		
 		if(n<1)
 		{
@@ -32,11 +32,11 @@ void input()
 		a[i].p=i;
 		printf("\n For Process %d", i);
 		printf(" Arrival Time of P[%d] = ", i);
-		scanf("%d", &a[i].at);
+        scanf_s("%d", &a[i].at);
 		printf(" Burst Time of P[%d] = ", i);
-		scanf("%d", &a[i].bt);
+		scanf_s("%d", &a[i].bt);
 		printf(" Priority of P[%d] = ", i);
-		scanf("%d", &a[i].pr);
+		scanf_s("%d", &a[i].pr);
 		util+=a[i].bt;
 		a[i].rt=a[i].bt;
 		printf("\n");
@@ -47,12 +47,12 @@ void input()
 	printf("\nStatic Priority Scheduling:\n");
 	else
 	printf("\nDynamic Priority Scheduling:\n");
-	printf(" Process   Arrival time   Burst time   Priority\n");
+    printf(" Process   Arrival time   Burst time   Priority\n");
 	for(i=0;i<n;i++)
 	printf(" P%d            %d ms          %d ms        %d\n", i, a[i].at, a[i].bt, a[i].pr);
 	
 //	sorting acc. to increasing arrival time
-	for(i=0;i<n;i++)
+    for(i=0;i<n;i++)
 	{
 		for(j=i+1;j<n;j++)
 		{
@@ -77,7 +77,7 @@ void sort(int x)
 		if(a[j].at>c)
 		break;
 		
-		if(a[j].pr<min)
+        if(a[j].pr<min)
 		{
 			min = a[j].pr;
 			i = j;
@@ -89,7 +89,7 @@ void sort(int x)
 	{
 		if(con_swt[d-1]!=c && opt==2)
 		con_swt[d++]=c;
-		t = a[x];
+        t = a[x];
 		a[x] = a[i];
 		a[i] = t;
 	}
@@ -106,7 +106,7 @@ void sps()
 			idle+=a[i].at-c;
 			if(c)
 			con_swt[d++]=c;
-			c=a[i].at;
+            c=a[i].at;
 		}
 		
 		con_swt[d++]=c;
@@ -134,7 +134,7 @@ void dps()
 			idle+=a[i].at-c;
 			if(c)
 			con_swt[d++]=c;
-			c=a[i].at;
+            c=a[i].at;
 		}
 		
 		con_swt[d++]=c;
@@ -163,7 +163,7 @@ int main()
 	
 	flag:
 	printf("Enter 1 For Static and 2 for Dynamic Priority Scheduling: ");
-	scanf("%d", &opt);
+	scanf_s("%d", &opt);
 	
 	switch(opt)
 	{
@@ -201,7 +201,7 @@ int main()
 	for(i=0;i<n;i++)
 	printf(" P%d            %d ms            %d ms\n", a[i].p, a[i].wt, a[i].ta);
 	
-	printf(" \nAverage waiting time: %.3f ms\n", WTavg);
+    printf(" \nAverage waiting time: %.3f ms\n", WTavg);
 	printf(" Average turnaround time: %.3f ms\n", TAavg);
 	printf(" CPU utilization time: %.3f ms\n", util);
 	printf(" CPU utilization percentage: %.3f %%\n", uperc);

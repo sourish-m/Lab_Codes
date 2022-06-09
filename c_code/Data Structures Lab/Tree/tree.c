@@ -23,7 +23,7 @@ int main()
     while (ch == 'y')
     {
         printf("Enter the value to insert::");
-        scanf("%d", &x);
+        scanf_s("%d", &x);
         root = insert (root, x);
         printf("\nNodes in inorder::");
         inorder(root);
@@ -33,7 +33,7 @@ int main()
         postorder(root);
         fflush(stdin);
         printf("\nContinue?(y/n):");
-        scanf("%c", &ch);
+        scanf_s("%c", &ch);
     }
 }
 node *insert ( node *root, int x)
