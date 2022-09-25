@@ -8,17 +8,17 @@ int main()
 	cin>>choice;
 	
 	cout<<"\nEnter String:"<<endl;
-	string plaintext;
+	string text;
 	int key; char i;
 	cin.ignore();
-	getline(cin, plaintext);
+	getline(cin, text);
 
 	cout<<"\nEnter the value of key: ";
 	cin>>key;
 
 	if (choice==1)
 	{
-		for(char &c : plaintext)
+		for(char &c : text)
 			if (c!=' ')
 			{
 				c<='Z'?i='A':i='a';
@@ -28,12 +28,12 @@ int main()
 
 	if (choice==2)
 	{
-		for(char &c : plaintext)
+		for(char &c : text)
 			if (c!=' ')
 			{
 				c<='Z'?i='Z':i='z';
 				c = i + (c - i - key) % 26;
 			}
 	}
-	cout<<"\nThe Output is:\n"<<plaintext<<endl;
+	cout<<"\nThe Output is:\n"<<text<<endl;
 }
