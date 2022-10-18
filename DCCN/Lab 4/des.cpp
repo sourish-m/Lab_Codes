@@ -44,8 +44,8 @@ int main()
 {
 
 	string key;
-//	cout<<"Enter key in hexadecimal:"<<endl;
-//	cin>>key;
+	/* cout<<"Enter key in hexadecimal:"<<endl; */
+	/* cin>>key; */
 	key = "AABB09182736CCDD";
 
 	key = hex2bin(key);
