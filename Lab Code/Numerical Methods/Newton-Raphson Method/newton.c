@@ -44,11 +44,11 @@ int main()
 {
     printf("Initial guess: ");  
     double x_0;
-    scanf("%lf", &x_0);
+    scanf_s("%lf", &x_0);
 
     printf("Error tolerance: ");
     double error;
-    scanf("%lf", &error);
+    scanf_s("%lf", &error);
 
     double root = calculate(x_0, error);
 
