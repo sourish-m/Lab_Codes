@@ -10,3 +10,6 @@ tags
 .tmp.driveupload/
 # Ignore Google Drive folder
 
+
+flask_website/
+#Ignore as it is already a git repo
