@@ -11,11 +11,14 @@ class test extends Frame
     TextField text2 = new TextField (10);
     TextField text3 = new TextField (10);
 
+    TextField value = new TextField (10);
+    Button square = new Button("Square");
+    TextField result = new TextField (10);
+
     test()
     {
         //Constructor
         setLayout( new FlowLayout() );
-        text3.setEditable(false);
 
         add(num1);
         add(text1);
@@ -24,14 +27,31 @@ class test extends Frame
         add(button1);
         button1.addActionListener (new IsClicked());
         add(text3);
+        text3.setEditable(false);
+        
+
+        add(value);
+        add(square);
+        square.addActionListener (new SquareButton());
+        add(result);
+        result.setEditable(false);
 
 
         setSize(500, 150);
         setVisible(true);
-        setTitle("Just Adds two numbers");
+        setTitle("Calculations");
         addWindowListener( new WindowAdapter() { public void windowClosing(WindowEvent we) { dispose(); } } );
     }
 
+    private class SquareButton implements ActionListener
+    {
+        public void actionPerformed (ActionEvent evnt)
+        {
+            int val = Integer.parseInt(value.getText());
+            val = val*val;
+            result.setText(val+"");
+        }
+    }
     private class IsClicked implements ActionListener 
     {
       public void actionPerformed(ActionEvent evt) 
