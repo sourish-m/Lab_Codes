@@ -13,5 +13,5 @@ tags
 
 flask_website/
 #Ignore as it is already a git repo
-NIT Internship/converter.py
-NIT Internship/csvmaker.py
+NIT Internship/
+.vscode/
