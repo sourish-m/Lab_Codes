@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Converter</title>
+    <meta charset="utf-8">
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" </head>
+
+<body class="section">
+    <form class="form" action="{{url_for('startpage')}}" method="post">
+        <label class="label" for="binary_input">Enter 8-digit binary value:</label>
+        <div class="field has-addons">
+            <div class="control">
+                <input class="input" type="text" name="binary_input" id="binary_input" placeholder="eg. 1011"
+                    maxlength="8" required>
+            </div>
+            <div class="control">
+                <input class="button is-dark" type="submit" value="Convert to Decimal">
+            </div>
+        </div>
+    </form>
+    <div class="columns">
+        <div class="column is-one-third mt-3">
+            {% if error %}
+            <div class="notification is-danger is-light">
+                {{ error }}
+            </div>
+            {% endif %}
+            {% if decimal %}
+            <div class="notification is-info is-light">
+                The decimal value is: {{ decimal }}.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
