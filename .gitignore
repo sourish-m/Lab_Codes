@@ -16,3 +16,5 @@ flask_website/
 NIT Internship/
 .vscode/
 App Ideas Daily/Bin2Dec/__pycache__/*
+__pycache__/
+*.py[cod]
